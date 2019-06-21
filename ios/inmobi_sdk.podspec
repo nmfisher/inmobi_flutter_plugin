@@ -2,9 +2,9 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'inmobi_plugin'
-  s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.name             = 'inmobi_sdk'
+  s.version          = '0.0.3'
+  s.summary          = 'Flutter plugin for InMobi advertising SDK.'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
