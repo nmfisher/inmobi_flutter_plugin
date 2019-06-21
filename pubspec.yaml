@@ -1,8 +1,8 @@
-name: inmobi_plugin
-description: A new flutter plugin project.
-version: 0.0.1
-author:
-homepage:
+name: inmobi_sdk
+description: Flutter plugin wrapping the InMobi advertising iOS/Android SDK
+version: 0.0.2
+author: Nick Fisher
+homepage: www.avinium.com
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
