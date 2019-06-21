@@ -1,6 +1,6 @@
 # inmobi_plugin
 
-A new flutter plugin project.
+A Flutter plugin for the [InMobi] (https://github.com/InMobi) advertising SDK.
 
 ## Getting Started
 
