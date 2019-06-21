@@ -6,8 +6,8 @@ class InMobiPlugin {
   static const MethodChannel _channel =
       const MethodChannel('inmobi_plugin');
 
-  static String accountId;
-  static String interstitialId;
+  static String _accountId;
+  static String _interstitialId;
 
   static Future<String> get platformVersion async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
@@ -15,13 +15,13 @@ class InMobiPlugin {
   }
 
   static Future configure(String accountId, String interstitialId) async {
-    if(accountId != null || interstitialId != null)
+    if(_accountId != null || _interstitialId != null)
       throw Exception("AccountId already configured");
-    await _channel.invokeMethod('configure', {"accountId":accountId});
-    this.interstitialId = interstitialId;
+    await _channel.invokeMethod('configure', {"accountId":_accountId});
+    _interstitialId = interstitialId;
   }
 
   static Future showInterstitial() async {
-    await _channel.invokeMethod('interstitial.show', {"placementId":this.interstitialId});
+    await _channel.invokeMethod('interstitial.show', {"placementId":_interstitialId});
   }
 }
