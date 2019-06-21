@@ -8,10 +8,11 @@ A Flutter plugin for the [InMobi] (https://github.com/InMobi) advertising SDK.
 
 Add the following to your dependencies:
 
+```
 inmobi_sdk: 
   git:
     url: git://github.com/nmfisher/inmobi_flutter_plugin
-
+```
 ### Configure
 
 Currently, only interstitial ads are supported.
