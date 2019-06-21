@@ -1,6 +1,6 @@
 name: inmobi_sdk
 description: Flutter plugin wrapping the InMobi advertising iOS/Android SDK
-version: 0.0.2
+version: 0.0.3
 author: Nick Fisher
 homepage: www.avinium.com
 

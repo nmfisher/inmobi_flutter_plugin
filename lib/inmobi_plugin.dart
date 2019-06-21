@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-class InmobiPlugin {
+class InMobiPlugin {
   static const MethodChannel _channel =
       const MethodChannel('inmobi_plugin');
 
