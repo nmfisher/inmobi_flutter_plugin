@@ -4,11 +4,22 @@ A Flutter plugin for the [InMobi] (https://github.com/InMobi) advertising SDK.
 
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### pubspec.yaml
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Add the following to your dependencies:
+
+inmobi_sdk: 
+  git:
+    url: git://github.com/nmfisher/inmobi_flutter_plugin
+
+### Configure
+
+Currently, only interstitial ads are supported.
+
+When your app loads, you *must* configure the plugin with your InMobi account ID, and the placement ID for your interstitial ad.
+
+```await InMobiPlugin.configure(accountId, interstitialId) ```
+
+To show the interstitial ad, invoke the following:
+
+```await InMobiPlugin.Future showInterstitial();```
