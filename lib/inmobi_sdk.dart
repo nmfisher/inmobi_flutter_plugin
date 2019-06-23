@@ -23,6 +23,10 @@ class InMobiSDK {
 
   }
 
+  static Future loadInterstitial() async {
+    await _channel.invokeMethod('interstitial.load');
+  }
+
   static Future showInterstitial() async {
     await _channel.invokeMethod('interstitial.show');
   }
