@@ -48,9 +48,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: RaisedButton(child:Text('Running on: $_platformVersion\n'),onPressed:() {InMobiSDK.showInterstitial(); })
-
+        body: Column(
+          children:[
+            RaisedButton(child:Text('Load interstitial'),onPressed:() {InMobiSDK.showInterstitial(); }),
+            RaisedButton(child:Text('Show interstitial'),onPressed:() {InMobiSDK.showInterstitial(); })
+          ]
         ),
       ),
     );
