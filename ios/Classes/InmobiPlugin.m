@@ -16,12 +16,10 @@
 - (void)interstitialDidFinishLoading:(IMInterstitial *)interstitial {
     NSLog(@"interstitialDidFinishLoading");
     UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-
     [self.interstitial showFromViewController:viewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
     NSLog(@"shown");
-
-
 }
+
 /* Indicates that the interstitial has failed to receive an ad. */
 - (void)interstitial:(IMInterstitial *)interstitial didFailToLoadWithError:(IMRequestStatus *)error {
     NSLog(@"Interstitial failed to load ad");
@@ -71,18 +69,18 @@
       [consentdict setObject:@1 forKey:@"gdpr"];
       //Initialize InMobi SDK with your account ID
       accountId = call.arguments[@"accountId"];
-      NSLog(@"Initializing with accountId %s", [accountId UTF8String]);
       [IMSdk initWithAccountID:accountId consentDictionary:consentdict];
-  } else if ([@"interstitial.show" isEqualToString:call.method]) {
       NSNumber* placementId = call.arguments[@"placementId"];
+      NSLog(@"Initializing with accountId %s and placementId %@", [accountId UTF8String], placementId);
+      long long placementId_long = [placementId longValue];
+      NSLog(@"Initializing interstitial with placementId: %lld",placementId_long );
+      self.interstitial = [[IMInterstitial alloc] initWithPlacementId:placementId_long];
+      self.interstitial.delegate = self;
+      result(nil);
+  } else if ([@"interstitial.show" isEqualToString:call.method]) {
       @try {
-          if(!self.interstitial) {
-            long long placementId_long = [placementId longValue];
-              self. interstitial = [[IMInterstitial alloc] initWithPlacementId:placementId_long];
-              self. interstitial.delegate = self;
-              [self.interstitial load];
-          }
-          
+	    [self.interstitial load];
+          result(nil);
           //if ([viewController isKindOfClass:[UINavigationController class]]) {
       //        [((UINavigationController*)viewController) popViewControllerAnimated:NO];
        //   }

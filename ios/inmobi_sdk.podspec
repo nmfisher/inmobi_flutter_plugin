@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'inmobi_sdk'
-  s.version          = '0.0.3'
+  s.version          = '0.0.5'
   s.summary          = 'Flutter plugin for InMobi advertising SDK.'
   s.description      = <<-DESC
 A new flutter plugin project.

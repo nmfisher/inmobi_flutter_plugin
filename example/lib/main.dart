@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:inmobi_plugin/inmobi_plugin.dart';
+import 'package:inmobi_sdk/inmobi_sdk.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await InmobiPlugin.platformVersion;
+      platformVersion = await InMobiSDK.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
     });
-    InmobiPlugin.configure();
+    InMobiSDK.configure("accountId", placementId);
   }
 
   @override
@@ -49,7 +49,8 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: RaisedButton(child:Text('Running on: $_platformVersion\n'),onPressed:() {InmobiPlugin.showInterstitial(); })
+          child: RaisedButton(child:Text('Running on: $_platformVersion\n'),onPressed:() {InMobiSDK.showInterstitial(); })
+
         ),
       ),
     );

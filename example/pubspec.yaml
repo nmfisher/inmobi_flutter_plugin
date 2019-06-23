@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  inmobi_plugin:
+  inmobi_sdk:
     path: ../
 
 # For information on the generic Dart part of this file, see the
