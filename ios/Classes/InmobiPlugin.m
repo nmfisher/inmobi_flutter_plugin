@@ -96,6 +96,7 @@
         result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
       } else if ([@"configure" isEqualToString:call.method]) {
         [self configureWithAccountId:call.arguments[@"accountId"] placementId:call.arguments[@"placementId"]];
+        result(nil);
       } else if ([@"interstitial.load" isEqualToString:call.method]) {      
         [self loadInterstitial];
         result(nil);
