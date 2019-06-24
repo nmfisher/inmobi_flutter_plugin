@@ -85,7 +85,7 @@ public class InMobiSDKPlugin implements MethodCallHandler {
             _interstitial.show();
             result.success(true);
           } catch(Exception e) {
-            result.success(false);
+            result.error("UnknownException", e.toString(), null);
           }
           break;
         default:
