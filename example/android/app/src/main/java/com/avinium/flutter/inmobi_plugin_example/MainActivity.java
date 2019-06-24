@@ -1,4 +1,4 @@
-package com.example.inmobi_plugin_example;
+package com.avinium.flutter.inmobi_plugin_example;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

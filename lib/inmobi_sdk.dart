@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 class InMobiSDK {
   static const MethodChannel _channel =
-      const MethodChannel('inmobi_plugin');
+      const MethodChannel('inmobi_sdk');
 
   static String _accountId;
   static int _interstitialId;

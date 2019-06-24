@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
     });
-    InMobiSDK.configure("accountId", placementId);
+    InMobiSDK.configure("accountId", 	your_placement_id);
   }
 
   @override
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children:[
-            RaisedButton(child:Text('Load interstitial'),onPressed:() {InMobiSDK.showInterstitial(); }),
+            RaisedButton(child:Text('Load interstitial'),onPressed:() {InMobiSDK.loadInterstitial(); }),
             RaisedButton(child:Text('Show interstitial'),onPressed:() {InMobiSDK.showInterstitial(); })
           ]
         ),

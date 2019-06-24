@@ -6,7 +6,7 @@
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"inmobi_plugin"
+      methodChannelWithName:@"inmobi_sdk"
             binaryMessenger:[registrar messenger]];
   InmobiPlugin* instance = [[InmobiPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
