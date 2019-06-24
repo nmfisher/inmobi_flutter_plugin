@@ -56,16 +56,16 @@
     NSLog(@"interstitialDidReceiveAd");
 }
 
-- (void)loadInterstitial:() {
-  if([self.interstitial] != nil)
+- (void)loadInterstitial {
+  if(self.interstitial != nil)
     NSLog(@"New interstitial is being loaded without the previous instance having been unset. This may cause odd behaviour");
   [self.interstitial load];
 }
 
-- (void)showInterstitial:() {
-  if([self.interstitial] == nil) {
+- (void)showInterstitial {
+  if(self.interstitial == nil) {
     NSLog(@"No interstitial loaded.");
-    [NSException raise:@"No interstitial has been loaded. A single interstitial object cannot be shown more than once, and instances are unloaded after being shown. You must therefore first invoke interstitial.load, then invoke interstitial.show, every time you want to display an interstitial."];
+    [NSException raise:@"InterstitialLoadException" format:@"No interstitial has been loaded. A single interstitial object cannot be shown more than once, and instances are unloaded after being shown. You must therefore first invoke interstitial.load, then invoke interstitial.show, every time you want to display an interstitial."];
   } else {
     UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     [self.interstitial showFromViewController:viewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
@@ -74,21 +74,20 @@
   }
 }
 
-- (void)configureWithAccountId:(NSString *)accountId placementId:(NSNumber)*placementId {
+- (void)configureWithAccountId:(NSString *)accountId placementId:(NSNumber*)placementId {
     //consent value needs to be collected from the end user
     NSMutableDictionary *consentdict=[[NSMutableDictionary alloc]init];
     [consentdict setObject:@"true" forKey:IM_GDPR_CONSENT_AVAILABLE];
     [consentdict setObject:@1 forKey:@"gdpr"];
     
     //Initialize InMobi SDK with your account ID
-    self.accountId = accountId
+    self.accountId = accountId;
     [IMSdk initWithAccountID:accountId consentDictionary:consentdict];
     NSLog(@"Initializing with accountId %s and placementId %@", [accountId UTF8String], placementId);
     long long placementId_long = [placementId longValue];
     NSLog(@"Initializing interstitial with placementId: %lld",placementId_long );
     self.interstitial = [[IMInterstitial alloc] initWithPlacementId:placementId_long];
     self.interstitial.delegate = self;
-    result(nil);
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
@@ -96,12 +95,13 @@
       if ([@"getPlatformVersion" isEqualToString:call.method]) {
         result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
       } else if ([@"configure" isEqualToString:call.method]) {
-        [self configureWithAccountId:call.arguments[@"accountId"], placementId:call.arguments[@"placementId"]];
+        [self configureWithAccountId:call.arguments[@"accountId"] placementId:call.arguments[@"placementId"]];
+        result(nil);
       } else if ([@"interstitial.load" isEqualToString:call.method]) {      
-        [self.loadInterstitial];
+        [self loadInterstitial];
         result(nil);
       } else if ([@"interstitial.show" isEqualToString:call.method]) {
-        [self.showInterstitial];
+        [self showInterstitial];
         result(nil);  
       } else {
         result(FlutterMethodNotImplemented);
