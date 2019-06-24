@@ -12,7 +12,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  
   String _platformVersion = 'Unknown';
+  bool isAvailable = false;
 
   @override
   void initState() {
@@ -38,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
     });
-    InMobiSDK.configure("accountId", 	your_placement_id);
+    InMobiSDK.configure("accountId", "placementId");
   }
 
   @override
@@ -50,8 +52,14 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children:[
-            RaisedButton(child:Text('Load interstitial'),onPressed:() {InMobiSDK.loadInterstitial(); }),
-            RaisedButton(child:Text('Show interstitial'),onPressed:() {InMobiSDK.showInterstitial(); })
+            RaisedButton(child:Text('Load interstitial'),onPressed:() async {
+              InMobiSDK.loadInterstitial(); 
+              isAvailable = await Future.delayed(Duration(seconds:5), () => InMobiSDK.isAvailable);
+              setState(() { });
+            }),
+            RaisedButton(child:Text(isAvailable ? 'Show interstitial' : 'Interstitial not available'),onPressed:() {
+              InMobiSDK.showInterstitial(); 
+            })
           ]
         ),
       ),

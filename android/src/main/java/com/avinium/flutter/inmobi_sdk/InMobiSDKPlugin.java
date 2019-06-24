@@ -53,7 +53,7 @@ public class InMobiSDKPlugin implements MethodCallHandler {
         // Provide 0 if GDPR is not applicable and 1 if applicable 
         consentObject.put("gdpr", "0");
         InMobiSdk.init(_activity, accountId, consentObject);
-        _interstitial = new Interstitial(_activity, placementId);
+        _interstitial = new Interstitial(_activity, placementId, _channel);
         Log.d(TAG, "InMobiSDK configuration complete.");
       } catch (JSONException e) {
          e.printStackTrace();
