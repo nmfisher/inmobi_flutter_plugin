@@ -1,4 +1,4 @@
-#import "InmobiPlugin.h"
+#import "InmobiSDKPlugin.h"
 
 @implementation InmobiPlugin
 
