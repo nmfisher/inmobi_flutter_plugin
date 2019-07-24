@@ -15,11 +15,13 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  #  s.dependency 'InMobiSDK'
+  s.dependency 'InMobiSDK'
   s.ios.deployment_target = '8.0'
   # s.static_framework = true
   s.xcconfig = {
-    "FRAMEWORK_SEARCH_PATHS" => "$(PROJECT_DIR)/../../ios/Classes/"
+    #    'OTHER_LDFLAGS' => '-lInMobiSdk.a -v',
+    'HEADER_SEARCH_PATHS' => '$(inherited) $(PODS_TARGET_SRCROOT)/Frameworks/inmobi_sdk_plugin',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PROJECT_DIR)/../../ios/Classes/ $(SRCROOT)/.symlinks/plugins/inmobi_sdk_plugin/ios/Classes/InMobiSDK/'
   }
 end
 
