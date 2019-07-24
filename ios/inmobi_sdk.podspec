@@ -18,8 +18,8 @@ A new flutter plugin project.
   s.ios.deployment_target = '8.0'
   s.static_framework = true
   s.dependency 'InMobiSDK'
-  #  s.xcconfig = {
-  #  'HEADER_SEARCH_PATHS' => '$(inherited) $(PROJECT_DIR)/Frameworks',
+  # s.xcconfig = {
+  #      'HEADER_SEARCH_PATHS' => '$(inherited) $(PROJECT_DIR)/Frameworks/InMobiSDK.framework/Headers',
   #}
 end
 
