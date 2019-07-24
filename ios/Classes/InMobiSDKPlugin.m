@@ -1,20 +1,25 @@
 #import "InMobiSDKPlugin.h"
 
-@implementation InmobiPlugin
+@implementation InMobiSDKPlugin
 
 @synthesize accountId;
 
+static FlutterMethodChannel *channel;
+
++ (FlutterMethodChannel*) channel { return channel; }
++ (void) setChannel:(FlutterMethodChannel*)value { channel = value; }
+
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"inmobi_sdk"
-            binaryMessenger:[registrar messenger]];
-  InmobiPlugin* instance = [[InmobiPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+    channel = [FlutterMethodChannel methodChannelWithName:@"inmobi_sdk" binaryMessenger:[registrar messenger]];
+    InMobiSDKPlugin* instance = [[InMobiSDKPlugin alloc] init];
+    [registrar addMethodCallDelegate:instance channel:channel];
 }
 
 /*Indicates that the interstitial is ready to be shown */
 - (void)interstitialDidFinishLoading:(IMInterstitial *)interstitial {
     NSLog(@"interstitialDidFinishLoading");
+    [channel invokeMethod:@"interstitial.adLoadSucceeded" arguments:nil];
 }
 
 /* Indicates that the interstitial has failed to receive an ad. */
@@ -26,6 +31,7 @@
 - (void)interstitial:(IMInterstitial *)interstitial didFailToPresentWithError:(IMRequestStatus *)error {
     NSLog(@"Interstitial didFailToPresentWithError");
     NSLog(@"Error : %@",error.description);
+    [channel invokeMethod:@"interstitial.adLoadFailed" arguments:nil];
 }
 /* indicates that the interstitial is going to present itself. */
 - (void)interstitialWillPresent:(IMInterstitial *)interstitial {
@@ -54,6 +60,7 @@
 
 - (void)interstitialDidReceiveAd:(IMInterstitial *)interstitial {
     NSLog(@"interstitialDidReceiveAd");
+    [channel invokeMethod:@"interstitial.adReceived" arguments:nil];
 }
 
 - (void)loadInterstitial {

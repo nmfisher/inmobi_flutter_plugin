@@ -1,7 +1,10 @@
 #import <Flutter/Flutter.h>
-#import <InMobiSDK/InMobiSDK.h>
-@interface InmobiPlugin : NSObject<FlutterPlugin,IMInterstitialDelegate>
+#import "InMobiSDK.h"
+
+@interface InMobiSDKPlugin : NSObject<FlutterPlugin,IMInterstitialDelegate>
+
 @property NSString* accountId;
+
 @property (nonatomic, strong) IMInterstitial *interstitial;
 
 - (void)loadInterstitial;
