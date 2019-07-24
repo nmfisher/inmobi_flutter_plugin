@@ -19,7 +19,7 @@ A new flutter plugin project.
   s.ios.deployment_target = '8.0'
   # s.static_framework = true
   s.xcconfig = {
-    #    'OTHER_LDFLAGS' => '-lInMobiSdk.a -v',
+    'OTHER_LDFLAGS' => '-framework InMobiSDK -v',
     'HEADER_SEARCH_PATHS' => '$(inherited) $(PODS_TARGET_SRCROOT)/Frameworks/inmobi_sdk_plugin',
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PROJECT_DIR)/../../ios/Classes/ $(SRCROOT)/.symlinks/plugins/inmobi_sdk_plugin/ios/Classes/InMobiSDK/'
   }
