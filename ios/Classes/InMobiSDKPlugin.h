@@ -1,5 +1,5 @@
 #import <Flutter/Flutter.h>
-#import "InMobiSDK.h"
+#import <InMobiSDK/InMobiSDK.h>
 
 @interface InMobiSDKPlugin : NSObject<FlutterPlugin,IMInterstitialDelegate>
 
