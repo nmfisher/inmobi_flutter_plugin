@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:inmobi_sdk/inmobi_sdk.dart';
+import 'package:inmobi_sdk_plugin/inmobi_sdk_plugin.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await InMobiSDK.platformVersion;
+      platformVersion = await InMobiSDKPlugin.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _platformVersion = platformVersion;
     });
-    InMobiSDK.configure("accountId", "placementId");
+    InMobiSDKPlugin.configure("9ba1a1afa0154c788f3967aa0ad516d5", 1560310700527);
   }
 
   @override
@@ -53,12 +53,12 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children:[
             RaisedButton(child:Text('Load interstitial'),onPressed:() async {
-              InMobiSDK.loadInterstitial(); 
-              isAvailable = await Future.delayed(Duration(seconds:5), () => InMobiSDK.isAvailable);
+              InMobiSDKPlugin.loadInterstitial(); 
+              isAvailable = await Future.delayed(Duration(seconds:5), () => InMobiSDKPlugin.isAvailable);
               setState(() { });
             }),
             RaisedButton(child:Text(isAvailable ? 'Show interstitial' : 'Interstitial not available'),onPressed:() {
-              InMobiSDK.showInterstitial(); 
+              InMobiSDKPlugin.showInterstitial(); 
             })
           ]
         ),

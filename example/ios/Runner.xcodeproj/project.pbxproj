@@ -20,7 +20,6 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		DB49E00322BCC482006E720F /* InMobiSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = DB49E00222BCC482006E720F /* InMobiSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +58,19 @@
 		B9F473373B78707DD717C029 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		C5CAAFBE03FC501D98BF95DF /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		CD6F6F26704D51D3B8F18030 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
-		DB49E00222BCC482006E720F /* InMobiSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = InMobiSDK; path = ../../ios/Classes/InMobiSDK/InMobiSDK; sourceTree = "<group>"; };
+		DB15816722E851E800286500 /* IMNativeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNativeDelegate.h; sourceTree = "<group>"; };
+		DB15816822E851E800286500 /* IMNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNative.h; sourceTree = "<group>"; };
+		DB15816922E851E800286500 /* IMSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSdk.h; sourceTree = "<group>"; };
+		DB15816A22E851E800286500 /* IMBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBanner.h; sourceTree = "<group>"; };
+		DB15816B22E851E800286500 /* IMInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitial.h; sourceTree = "<group>"; };
+		DB15816C22E851E800286500 /* InMobiSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobiSDK.h; sourceTree = "<group>"; };
+		DB15816D22E851E800286500 /* InMobiSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = InMobiSDK.a; sourceTree = "<group>"; };
+		DB15816E22E851E800286500 /* IMCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMCommonConstants.h; sourceTree = "<group>"; };
+		DB15816F22E851E800286500 /* IMInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMInterstitialDelegate.h; sourceTree = "<group>"; };
+		DB15817022E851E800286500 /* IMBannerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBannerDelegate.h; sourceTree = "<group>"; };
+		DB15817122E851E800286500 /* IMRequestStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMRequestStatus.h; sourceTree = "<group>"; };
+		DB15817222E851E800286500 /* InMobiSDKPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InMobiSDKPlugin.m; sourceTree = "<group>"; };
+		DB15817322E851E800286500 /* InMobiSDKPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMobiSDKPlugin.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB49E00322BCC482006E720F /* InMobiSDK in Frameworks */,
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
 				75A9E98D8019355D8CDA6B3B /* libPods-Runner.a in Frameworks */,
@@ -80,7 +90,6 @@
 		450D883CBCB8DC1E285E3480 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB49E00222BCC482006E720F /* InMobiSDK */,
 				120CD1E45EEB58067C85EFA3 /* libPods-Runner.a */,
 			);
 			name = Frameworks;
@@ -102,6 +111,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				DB15816522E851E800286500 /* Classes */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -150,6 +160,35 @@
 				CD6F6F26704D51D3B8F18030 /* Pods-Runner.profile.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB15816522E851E800286500 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DB15816622E851E800286500 /* InMobiSDK */,
+				DB15817222E851E800286500 /* InMobiSDKPlugin.m */,
+				DB15817322E851E800286500 /* InMobiSDKPlugin.h */,
+			);
+			name = Classes;
+			path = ../../ios/Classes;
+			sourceTree = "<group>";
+		};
+		DB15816622E851E800286500 /* InMobiSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DB15816722E851E800286500 /* IMNativeDelegate.h */,
+				DB15816822E851E800286500 /* IMNative.h */,
+				DB15816922E851E800286500 /* IMSdk.h */,
+				DB15816A22E851E800286500 /* IMBanner.h */,
+				DB15816B22E851E800286500 /* IMInterstitial.h */,
+				DB15816C22E851E800286500 /* InMobiSDK.h */,
+				DB15816D22E851E800286500 /* InMobiSDK.a */,
+				DB15816E22E851E800286500 /* IMCommonConstants.h */,
+				DB15816F22E851E800286500 /* IMInterstitialDelegate.h */,
+				DB15817022E851E800286500 /* IMBannerDelegate.h */,
+				DB15817122E851E800286500 /* IMRequestStatus.h */,
+			);
+			path = InMobiSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" thin";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" thin\n";
 		};
 		5325B89E9C0FB326F6198F95 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -250,7 +289,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh",
-				"${PODS_ROOT}/../.symlinks/flutter/ios-release/Flutter.framework",
+				"${PODS_ROOT}/../.symlinks/flutter/ios/Flutter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -376,6 +415,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -393,12 +438,24 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)/../../ios/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/inmobi_sdk_plugin/inmobi_sdk_plugin.framework/Headers\"",
+					"$(PROJECT_DIR)/../../ios/Frameworks/",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.avinium.inmobiPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,6 +512,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -502,6 +565,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -519,12 +588,24 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)/../../ios/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/inmobi_sdk_plugin/inmobi_sdk_plugin.framework/Headers\"",
+					"$(PROJECT_DIR)/../../ios/Frameworks/",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.avinium.inmobiPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,12 +624,24 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)/../../ios/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/inmobi_sdk_plugin/inmobi_sdk_plugin.framework/Headers\"",
+					"$(PROJECT_DIR)/../../ios/Frameworks/",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Flutter\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.avinium.inmobiPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
