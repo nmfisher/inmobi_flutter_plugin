@@ -57,20 +57,16 @@
 }
 
 - (void)loadInterstitial {
-  if(self.interstitial != nil)
-    NSLog(@"New interstitial is being loaded without the previous instance having been unset. This may cause odd behaviour");
   [self.interstitial load];
 }
 
 - (void)showInterstitial {
   if(self.interstitial == nil) {
-    NSLog(@"No interstitial loaded.");
-    [NSException raise:@"InterstitialLoadException" format:@"No interstitial has been loaded. A single interstitial object cannot be shown more than once, and instances are unloaded after being shown. You must therefore first invoke interstitial.load, then invoke interstitial.show, every time you want to display an interstitial."];
+    [NSException raise:@"InterstitialLoadException" format:@"Interstitial has not been loaded. "];
   } else {
-    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [self.interstitial showFromViewController:viewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
-    self.interstitial = nil;
-    NSLog(@"Loaded interstitial shown and unloaded");
+    UIViewController *flutterViewController = [[FlutterViewController alloc] init];
+    // UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [self.interstitial showFromViewController:flutterViewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
   }
 }
 
@@ -78,7 +74,7 @@
     //consent value needs to be collected from the end user
     NSMutableDictionary *consentdict=[[NSMutableDictionary alloc]init];
     [consentdict setObject:@"true" forKey:IM_GDPR_CONSENT_AVAILABLE];
-    [consentdict setObject:@1 forKey:@"gdpr"];
+    [consentdict setObject:@1 forKey:@"gdpr"];  
     
     //Initialize InMobi SDK with your account ID
     self.accountId = accountId;
