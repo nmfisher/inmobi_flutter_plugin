@@ -72,7 +72,7 @@ static FlutterMethodChannel *channel;
     [NSException raise:@"InterstitialLoadException" format:@"Interstitial has not been loaded. "];
   } else {
     UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [self.interstitial showFromViewController:flutterViewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
+    [self.interstitial showFromViewController:viewController withAnimation:kIMInterstitialAnimationTypeCoverVertical];
   }
 }
 
