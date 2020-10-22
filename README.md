@@ -9,7 +9,7 @@ A Flutter plugin for the [InMobi](https://github.com/InMobi) advertising SDK.
 Add the following to your dependencies:
 
 ```
-inmobi_sdk: 
+inmobi_sdk_plugin: 
   git:
     url: git://github.com/nmfisher/inmobi_flutter_plugin
 ```
